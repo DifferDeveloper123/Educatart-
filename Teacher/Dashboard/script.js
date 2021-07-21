@@ -3,6 +3,20 @@ let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".fa-search");
 var greeting;
 
+var config = {
+  apiKey: "AIzaSyALL8PKkowKydLAmYGpArb-S1G5t6gafro",
+  authDomain: "educatart.firebaseapp.com",
+  databaseURL: "https://educatart-default-rtdb.firebaseio.com",
+  projectId: "educatart",
+  storageBucket: "educatart.appspot.com",
+  messagingSenderId: "203907937510",
+  appId: "1:203907937510:web:20c9a8f9d853836a86f727"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var database = firebase.database();
+
 closeBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("open");
   menuBtnChange();//calling the function(optional)
