@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Educatart</title>
+  <link rel="icon" href="/Educatart/Educatart.png" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body style="overflow-x: hidden;" onload="load();">
+
+
+  <svg viewBox="0 0 960 300">
+    <symbol id="s-text">
+      <text text-anchor="middle" x="40%" y="80%">Educatart</text>
+    </symbol>
+  
+    <g class = "g-ants">
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+      <use xlink:href="#s-text" class="text-copy"></use>
+    </g>
+  </svg>
+
+  <img class="logo" src="/Educatart/Educatart.png">
+
+  <div class="container">
+    <a class="btn btn-1" onclick="navigate.Student();"><img src="/Educatart/Student.png" width=10%/></a>
+    <a class="btn btn-2" onclick="navigate.Teacher();"><img src="/Educatart/Teacher 2.svg" width=5%/></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Chatting | Educatart</title>
+  <link rel="icon" href="/Educatart/Educatart.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel="stylesheet" href="./style.css">
+<link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</script>
+
+</head>
+<body onload="load();">
+
+  <div id="preloader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  <div class="loadScreen" id="loadScreen"></div>
+
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="/Educatart/Educatart.svg" width="30px">
+        <div class="logo_name">Educatart</div>
+        <i class="fad fa-bars" id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="../Dashboard/">
+          <i class="fad fa-cube"></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a class="active">
+        <i class="fad fa-comments-alt"></i>
+         <span class="links_name">Chat</span>
+       </a>
+     </li>
+     <li>
+       <a href="../Worksheet/">
+        <i class="fad fa-book-open"></i>
+         <span class="links_name">WorkSheet</span>
+       </a>
+       <span class="tooltip">WorkSheet</span>
+     </li>
+     <li>
+      <a href="" onclick="signOut();">
+        <i class="fad fa-sign-out-alt"></i>
+        <span class="links_name">Sign out</span>
+      </a>
+      <span class="tooltip">Sign out</span>
+    </li>
+     <li class="profile">
+         <div class="profile-details">
+           <img src="" id="profilePicture" alt="profile picture">
+           <div class="name_job" style="position: relative; left: 10px; right: 50px;">
+             <div class="name" id="username_heading">name</div>
+             <div class="job" id="email_heading">email</div>
+           </div>
+         </div>
+         <i class="fad fa-sign-out-alt" id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+<div class="container mt-3" style="border-radius: 30px;">
+  <div class="card" id="page-chat" style="border-radius: 30px;">
+    <div class="header" style="border-top-left-radius: 30px; border-top-right-radius: 30px;">
+      <div>Educatart <br> <span id="school">...</span></div>
+    </div>
+    <div class="card-content" id="chat-wrap"></div>
+    <div class="p-2" id="input-msg">
+      <div class="input-group">
+        <input class="form-control" id="input-message" placeholder="Type a message"/>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" id="btn-sendMsg" onclick="app.sendMsg()"><i class="fad fa-paper-plane"></i></button></span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+  <script src='https://www.gstatic.com/firebasejs/8.7.1/firebase.js'></script>
+  <script src='https://www.gstatic.com/firebasejs/8.7.1/firebase-messaging.js'></script>
+  <script  src="./script.js"></script>
+
+</body>
+</html>

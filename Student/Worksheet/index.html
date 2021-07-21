@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="title">Educatart</title>
+        <link rel="icon" href="/Educatart/Educatart.png" type="image/png">
+        <link rel="stylesheet" href="index.css">
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+        <!-- Boxiocns CDN Link -->
+        <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    </head>
+    <body onload="everything.check()">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+         <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyALL8PKkowKydLAmYGpArb-S1G5t6gafro",
+    authDomain: "educatart.firebaseapp.com",
+    databaseURL: "https://educatart-default-rtdb.firebaseio.com",
+    projectId: "educatart",
+    storageBucket: "educatart.appspot.com",
+    messagingSenderId: "203907937510",
+    appId: "1:203907937510:web:20c9a8f9d853836a86f727"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<div class="text" id="countdown"></div>
+<!-- SVG GOOEY FILTER-->
+<svg>
+  <filter id="gooey">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur"></feGaussianBlur>
+    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 28 -8" result="gooey"></feColorMatrix>
+    <feComposite in="SourceGraphic" in2="gooey" operator="atop"></feComposite>
+  </filter>
+</svg>
+
+        <div id="main" style="opacity: 0%;">
+            <nav class="hero-nav">
+                <div class="hero-nav__inner">
+                    <svg viewBox="0 0 960 300">
+                        <symbol id="s-text">
+                            <text text-anchor="middle" x="50%" y="80%">Educatart</text>
+                        </symbol>
+                    
+                        <g class = "g-ants">
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                            <use xlink:href="#s-text" class="text-copy"></use>
+                        </g>
+                    </svg>
+                </div>
+            </nav> 
+
+            <i class="fad fa-sign-out fa-rotate-180" style="position: fixed; top: 5px; left: 5px;" onclick="quiz.exit();"></i>
+            <a id="totalCurrentQuestion" class="header-total-current-question-subject-class" style="position: fixed; top: 3px; left: 80px;">current/total</a>
+            <a id="subject_of_worksheet" class="header-total-current-question-subject-class" style="position: fixed; top: 3px; right: 80px;">subject</a>
+            <a id="class_of_worksheet" class="header-total-current-question-subject-class" style="position: fixed; top: 3px; right: 5px;">12</a>
+            
+            <div class="bg_move">
+                <h1 id="institute-label">Institute</h1>
+            </div>
+            <a id="question-label" class="question-label">Question</a>
+
+            <div id="currentQuestionHolder" class="currentQuestion-fade"><span id="currectQuestionFade">1</span></div>
+            <div id="options">
+                <button id="option1_option" onclick="checkOption();" class="option1">option</button>
+                <button id="option2_option" onclick="checkOption();" class="option2">option</button>
+                <button id="option3_option" onclick="checkOption();" class="option3">option</button>
+              </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

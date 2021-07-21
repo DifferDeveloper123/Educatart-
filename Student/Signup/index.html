@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Signup | Educatart</title>
+  <link rel="icon" href="/Educatart/Educatart.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,900" rel="stylesheet">
+ <script src="https://smtpjs.com/v3/smtp.js">
+ </script>
+</head>
+<body id="body" onload="load()">
+
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyALL8PKkowKydLAmYGpArb-S1G5t6gafro",
+    authDomain: "educatart.firebaseapp.com",
+    databaseURL: "https://educatart-default-rtdb.firebaseio.com",
+    projectId: "educatart",
+    storageBucket: "educatart.appspot.com",
+    messagingSenderId: "203907937510",
+    appId: "1:203907937510:web:20c9a8f9d853836a86f727"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <div id="background-wrap">
+    <div class="bubble x1"></div>
+    <div class="bubble x2"></div>
+    <div class="bubble x3"></div>
+    <div class="bubble x4"></div>
+    <div class="bubble x5"></div>
+    <div class="bubble x6"></div>
+    <div class="bubble x7"></div>
+    <div class="bubble x8"></div>
+    <div class="bubble x9"></div>
+    <div class="bubble x10"></div>
+</div>
+
+<div class="snackbar" id="copied">Access Token Copied</div>
+
+<div id="login-card" class="card">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<div class="card-body">
+  <h2 class="text-center">Educatart</h2>
+  <br>
+  <div>
+    <div class="form-group">
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" title="Please Enter Your Email" required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="username" placeholder="Enter Your Name" name="username" title="Please Enter Your Name" style="
+      text-transform: capitalize;" required>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="schoolName" placeholder="Enter Your School Name" title="Please Enter Your School Name" name="schoolName" required>
+    </div>
+
+    <div class="form-group">
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd" title="Please Enter Your Password" required>
+    </div>
+    
+    <div class="form-group" id="accesToken" style="display: none;">
+      <input type="text" class="form-control" id="accessTkn" placeholder="Enter your acces token" name="accessTkn" required>
+    </div>
+
+    <button type="button" id="accessTknGenerate" class="btn btn-primary deep-green btn-block " title="Create Access Token">Generate Token</button>
+
+    <button type="submit" id="submitButton" class="btn btn-primary deep-blue btn-block ">Create Account</button>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div id="preloader" style="display: none;" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+<div id="wrapper"  style="display: none;">
+  <div id="dialog">
+    <h3>Please enter the 4-digit verification code we sent via email:</h3>
+    <div id="form">
+      <input type="tel" maxLength="4" size="4" min="0" max="9" id="verificationIdInput" pattern="[0-9]{1}" />
+      <button class="btn btn-primary btn-embossed" onclick="verifyAccount();">Verify</button>
+    </div>
+  </div>
+</div>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
